@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Musse — кондитерская в Ургенче</title>
+  <meta name="description"
+    content="Musse — авторские муссовые торты, эклеры и тарты в Ургенче. Натуральные ингредиенты, ручная работа. Заказ через Telegram.">
+
+  <meta property="og:title" content="Musse — кондитерская в Ургенче">
+  <meta property="og:description"
+    content="Авторские муссовые торты, эклеры и тарты. Ручная работа, натуральные ингредиенты.">
+  <meta property="og:image" content="img/og.jpg">
+  <meta property="og:url" content="https://musse.uz/"><!-- TODO: реальный домен -->
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="img/og.jpg">
+
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFF8F0'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='40' fill='%239B1B1B'%3EM%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- LocalBusiness schema (TZ §9.4) — TODO: заменить плейсхолдеры -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Musse",
+    "description": "Кондитерская: муссовые торты, эклеры, тарты",
+    "image": "https://musse.uz/img/og.jpg",
+    "url": "https://musse.uz/",
+    "telephone": "+998712000000",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Аль-Хорезми, 14",
+      "addressLocality": "Ургенч",
+      "addressCountry": "UZ"
+    },
+    "openingHours": "Mo-Su 09:00-20:00"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ======================= Giant Typography Preloader ======================= -->
+  <div class="preloader-type" id="preloader" aria-hidden="true">
+    <div class="preloader-type-content">
+      <h1 class="preloader-type-logo">
+        <span>M</span><span>U</span><span>S</span><span>S</span><span>E</span>
+      </h1>
+      <div class="preloader-type-divider"></div>
+      <p class="preloader-type-sub">Авторская кондитерская · Ургенч</p>
+      <div class="preloader-type-timer"><span id="preloader-count">00</span><span class="pct">%</span></div>
+    </div>
+    <div class="preloader-type-bar" id="preloader-bar"></div>
+  </div>
+
+  <!-- ======================= Header ======================= -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Musse — на главную">Musse</a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html" aria-current="page">Главная</a>
+        <a href="menu.html">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-contacts">
+        <a class="header-phone" href="tel:+998712000000">+998 71 200 00 00</a>
+
+        <a class="social-link" href="https://t.me/musse_tashkent" target="_blank" rel="noopener"
+          aria-label="Musse в Telegram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M21.5 4.5 2.9 11.7c-.8.3-.8 1.4 0 1.7l4.6 1.5 1.7 5.2c.2.7 1.1.9 1.6.4l2.5-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3-15c.2-.9-.7-1.6-1.6-1.3Z" />
+            <path d="m7.5 14.9 9.8-7.6" />
+          </svg>
+        </a>
+        <a class="social-link" href="https://instagram.com/musse.tashkent" target="_blank" rel="noopener"
+          aria-label="Musse в Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+
+        <a class="btn btn-primary" href="https://t.me/musse_tashkent" target="_blank" rel="noopener">Написать нам</a>
+
+        <button class="burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация">
+    <a href="index.html">Главная</a>
+    <a href="menu.html">Меню</a>
+    <a href="#about">О нас</a>
+    <a href="#contacts">Контакты</a>
+    <div class="mobile-menu-meta">
+      <a class="btn btn-primary" href="https://t.me/musse_tashkent" target="_blank" rel="noopener">Написать нам</a>
+      <a class="header-phone" style="display:inline" href="tel:+998712000000">+998 71 200 00 00</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ======================= Hero ======================= -->
+    <section class="hero hero-split">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="container hero-split-inner">
+        <div class="hero-text-col reveal-left">
+          <span class="eyebrow">Кондитерская в Ургенче</span>
+          <h1 class="hero-title">Десерты,<br>в которые <em class="gold-text">влюбляешься</em></h1>
+          <div class="hero-mini-rule"></div>
+          <p class="hero-sub">Авторские муссовые торты, эклеры и тарты — искусство европейской кондитерской в Ургенче</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="menu.html">Смотреть меню</a>
+            <a class="btn btn-ghost" href="#about">О нас</a>
+          </div>
+        </div>
+        <div class="hero-media-col reveal">
+          <div class="hero-glow-blob" aria-hidden="true"></div>
+          <div class="hero-img-frame">
+            <img src="img/hero.png" alt="Авторский муссовый торт Musse" loading="eager">
+            <div class="hero-floating-badge">
+              <span class="star">✦</span>
+              <span>100% Ручная работа</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= Promotions ======================= -->
+    <section class="promos section container" id="promos" aria-label="Специальные предложения">
+      <div class="promo-grid">
+        <article class="promo-card reveal-left">
+          <div class="promo-media">
+            <img src="img/promo_tart.png" alt="Клубничный тарт «Сезонный»" loading="lazy"
+              style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="promo-body">
+            <span class="promo-tag">Новинка</span>
+            <h3 class="promo-title">Клубничный тарт «Сезонный»</h3>
+            <p class="promo-text">Песочная основа, нежный ванильный крем и свежая клубника</p>
+            <p class="promo-price">45 000 сум</p>
+            <a class="btn btn-ghost" data-tg-order="Клубничный тарт «Сезонный»" href="#" target="_blank"
+              rel="noopener">Заказать в Telegram</a>
+          </div>
+        </article>
+
+        <article class="promo-card reveal-left" style="--d:.12s">
+          <div class="promo-media">
+            <img src="img/promo_eclairs.png" alt="Набор фирменных эклеров" loading="lazy"
+              style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="promo-body">
+            <span class="promo-tag">Классика</span>
+            <h3 class="promo-title">Набор фирменных эклеров</h3>
+            <p class="promo-text">Восемь эклеров: ваниль, фисташка, лимон и ягоды</p>
+            <p class="promo-price">220 000 сум</p>
+            <a class="btn btn-ghost" data-tg-order="Набор фирменных эклеров" href="#" target="_blank"
+              rel="noopener">Заказать в Telegram</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================= About ======================= -->
+    <section class="about section" id="about" aria-label="О нас">
+      <div class="container">
+        <div class="about-label reveal">
+          <div class="craft-seal">
+            <svg viewBox="0 0 100 100">
+              <path id="sealPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+              <text font-size="9" font-weight="600" letter-spacing="2.5" fill="#9B1B1B">
+                <textPath href="#sealPath">HANDCRAFTED DAILY · URGENCH · </textPath>
+              </text>
+            </svg>
+            <span class="craft-seal-center">M</span>
+          </div>
+          <p class="about-quote">«Каждый десерт — это маленькое произведение ручной работы»</p>
+          <h2 class="about-title">Искусство ручной работы</h2>
+          <hr class="rule">
+          <p class="about-text">Musse — кондитерская в Ургенче с фокусом на муссовые торты, эклеры и авторские десерты.
+            Мы используем только натуральные ингредиенты и работаем с сезонными вкусами. Каждый десерт создаётся вручную
+            — от первой ноты до последнего штриха.</p>
+          
+          <div class="about-stats-grid">
+            <div class="stat-card">
+              <span class="stat-num">100%</span>
+              <span class="stat-desc">Натуральные ингредиенты</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true">✦</div>
+            <div class="stat-card">
+              <span class="stat-num">8+</span>
+              <span class="stat-desc">Видов фирменных десертов</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true">✦</div>
+            <div class="stat-card">
+              <span class="stat-num">Свежее</span>
+              <span class="stat-desc">Выпекаем каждое утро</span>
+            </div>
+          </div>
+
+          <p class="about-foot">Ургенч · с любовью к деталям</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= Venue ======================= -->
+    <section class="section container" id="venue" aria-label="Наше заведение">
+      <div style="text-align:center">
+        <span class="eyebrow">Заходите в гости</span>
+        <h2 class="section-title">Уютное место в центре города</h2>
+      </div>
+      <div class="venue-grid">
+        <figure class="venue-item reveal">
+          <div class="venue-photo">
+            <img data-parallax src="img/venue_inside.png" alt="Интерьер кондитерской Musse" loading="lazy"
+              style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <figcaption class="venue-caption">✦ Внутри</figcaption>
+        </figure>
+        <figure class="venue-item reveal" style="--d:.12s">
+          <div class="venue-photo">
+            <img data-parallax src="img/venue_outside.png" alt="Фасад кондитерской Musse" loading="lazy"
+              style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <figcaption class="venue-caption">✦ Снаружи</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ======================= Location ======================= -->
+    <section class="section container" id="contacts" aria-label="Контакты и расположение">
+      <div style="text-align:center">
+        <span class="eyebrow">Контакты</span>
+        <h2 class="section-title">Где нас найти</h2>
+      </div>
+      <div class="location-grid">
+        <div class="location-card reveal">
+          <div class="location-status-pill">
+            <span class="live-pulse-dot"></span>
+            <span>Открыто сегодня с 9:00 до 20:00</span>
+          </div>
+          <div class="location-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div>
+              <h3>Адрес</h3>
+              <p>Ургенч, ул. Аль-Хорезми, 14</p>
+            </div>
+          </div>
+          <div class="location-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+            <div>
+              <h3>Время работы</h3>
+              <p>Ежедневно 9:00 — 20:00</p>
+            </div>
+          </div>
+          <div class="location-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
+            </svg>
+            <div>
+              <h3>Телефон</h3>
+              <a href="tel:+998712000000">+998 71 200 00 00</a>
+            </div>
+          </div>
+          <a class="btn btn-ghost" href="https://yandex.uz/maps/?text=Ургенч,+улица+Аль-Хорезми+14" target="_blank"
+            rel="noopener">Как добраться</a>
+        </div>
+
+        <div class="map-frame reveal" style="--d:.12s">
+          <iframe title="Карта — расположение Musse в Ургенче" loading="lazy"
+            src="https://yandex.ru/map-widget/v1/?ll=60.6315,41.5504&z=16&pt=60.6315,41.5504,pm2rdm"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= Footer ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-logo">Musse</p>
+          <p>Искусство ручной работы в каждом десерте. С любовью к европейским традициям — в самом сердце Ургенча.</p>
+        </div>
+        <nav class="footer-col" aria-label="Навигация">
+          <h4>Меню</h4>
+          <a href="index.html">Главная</a>
+          <a href="menu.html">Меню</a>
+          <a href="#about">О нас</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <div class="footer-col">
+          <h4>Мы в сетях</h4>
+          <a class="with-icon" href="https://t.me/musse_tashkent" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M21.5 4.5 2.9 11.7c-.8.3-.8 1.4 0 1.7l4.6 1.5 1.7 5.2c.2.7 1.1.9 1.6.4l2.5-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6l3-15c.2-.9-.7-1.6-1.6-1.3Z" />
+              <path d="m7.5 14.9 9.8-7.6" />
+            </svg>
+            Telegram
+          </a>
+          <a class="with-icon" href="https://instagram.com/musse.tashkent" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none" />
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Musse. Все права защищены.</p>
+        <nav class="footer-nav" aria-label="Навигация в подвале">
+          <a href="index.html">Главная</a><span class="dot">·</span>
+          <a href="menu.html">Меню</a><span class="dot">·</span>
+          <a href="#about">О нас</a><span class="dot">·</span>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================= Quick View Modal ======================= -->
+  <div class="modal-backdrop" id="quick-view-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-window">
+      <button class="modal-close" aria-label="Закрыть окно">✕</button>
+      <div class="modal-media"></div>
+      <div class="modal-content">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <div class="modal-flavor-container"></div>
+        <div class="modal-foot">
+          <span class="modal-price"></span>
+          <div class="modal-action"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= Mobile Bottom Navigation ======================= -->
+  <nav class="bottom-nav" aria-label="Мобильное меню">
+    <a href="index.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z"/>
+      </svg>
+      <span>Главная</span>
+    </a>
+    <a href="menu.html" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+        <line x1="6" y1="1" x2="6" y2="4"/>
+        <line x1="10" y1="1" x2="10" y2="4"/>
+        <line x1="14" y1="1" x2="14" y2="4"/>
+      </svg>
+      <span>Меню</span>
+    </a>
+    <a href="index.html#about" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      <span>О нас</span>
+    </a>
+    <a href="index.html#venue" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 21h18"/>
+        <path d="M3 7l2-4h14l2 4v14H3z"/>
+        <path d="M9 21v-6h6v6"/>
+      </svg>
+      <span>Место</span>
+    </a>
+    <a href="index.html#contacts" class="bottom-nav-item">
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span>Контакты</span>
+    </a>
+  </nav>
+
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
